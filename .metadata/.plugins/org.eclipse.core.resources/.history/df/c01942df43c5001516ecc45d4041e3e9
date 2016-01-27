@@ -1,0 +1,73 @@
+package models;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class User {
+	
+	public boolean add_user(String name, String pass, String propFilePath)
+	{
+        //File propFile = new File("users.properties");
+		Properties prop = new Properties();
+		FileInputStream fis = null;
+		try{
+			fis = new FileInputStream(propFilePath);
+
+		    prop.load(fis); 
+		    
+		    boolean exists = nameExists(name,pass);
+			if (!exists){
+			    prop.setProperty(name, pass);
+			    prop.store(new FileOutputStream(propFilePath), null);
+				return true;
+			}else{
+				return false;
+			}
+		} catch (FileNotFoundException e) {
+
+		    System.out.println("FileNotFound");
+
+		} catch (IOException e) {
+
+		    System.out.println("IOEXCeption");
+
+		} finally {
+
+		    if (fis != null) {
+		        try {
+		            fis.close();
+		        }
+		        catch (Exception e) {
+
+		            e.printStackTrace();
+		        }
+		    }
+		}
+		return false;
+		
+	}
+	
+	 private boolean nameExists(String name, String pass) {
+	        Properties prop = new Properties();
+//	        InputStream input = null;
+	        boolean exists = false;
+/*
+	        try {
+	            input = new FileInputStream(propFile);
+
+	            prop.load(input);
+	            input.close();
+
+	        }catch (IOException e) {
+	        	e.printStackTrace();
+	        }   */
+	        
+	        exists = prop.containsKey(name);
+
+	        return exists;
+	 }
+
+}
