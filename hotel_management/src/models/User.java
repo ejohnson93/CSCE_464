@@ -1,6 +1,5 @@
 package models;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -16,133 +15,42 @@ public class User {
 	
 	public enum VALIDATE {VALID, INVALID, NOTFOUND;}
 	
-	public boolean addUser(String propFilePath)
+	public boolean addUser(Properties prop, String propFilePath) throws FileNotFoundException, IOException
 	{
-		Properties prop = new Properties();
-		FileInputStream fis = null;
-		try{
-			fis = new FileInputStream(propFilePath);
-
-		    prop.load(fis); 
-		    
-		    boolean exists = nameExists(propFilePath);
-			if (!exists){
-			    prop.setProperty(this.username, this.password);
-			    prop.store(new FileOutputStream(propFilePath), null);
-				return true;
-			}else{
-				return false;
-			}
-		} catch (FileNotFoundException e) {
-
-		    System.out.println("FileNotFound");
-
-		} catch (IOException e) {
-
-		    System.out.println("IOEXCeption");
-
-		} finally {
-
-		    if (fis != null) {
-		        try {
-		            fis.close();
-		        }
-		        catch (Exception e) {
-
-		            e.printStackTrace();
-		        }
-		    }
+		String password = prop.getProperty(this.username);
+		
+	    boolean exists;
+	    
+	    if (password == null){
+			 exists = false;
+		 }else {
+			 exists =  true;
+		 }
+	    
+		if (!exists){
+		    prop.setProperty(this.username, this.password);
+		    prop.store(new FileOutputStream(propFilePath), null);
+			return true;
+		}else{
+			return false;
 		}
-		return false;
 		
 	}
-	
-	 private boolean nameExists(String propFilePath) {
-		 Properties p = new Properties();
-
-			FileInputStream fis = null;
-
-			try {
-
-			    fis = new FileInputStream(propFilePath);
-
-			    p.load(fis);
-			    String password = p.getProperty(this.username);  
-			    
-			    if (password == null){
-			    	return false;
-			    }else {
-			    	return true;
-			    }
-				
-	   
-			} catch (FileNotFoundException e) {
-
-			    System.out.println("FileNotFound");
-
-			} catch (IOException e) {
-
-			    System.out.println("IOEXCeption");
-
-			} finally {
-
-			    if (fis != null) {
-			        try {
-			            fis.close();
-			        }
-			        catch (Exception e) {
-
-			            e.printStackTrace();
-			        }
-			    }
-			}
-			return false;
-	 }
 	 
-	 public VALIDATE validateUser(String propFilePath){
-			Properties p = new Properties();
-
-			FileInputStream fis = null;
-
-			try {
-
-			    fis = new FileInputStream(propFilePath);
-
-			    p.load(fis);
-			    String password = p.getProperty(this.username);  
-			    
-			    if (password != null){
-			    	if ( password.equals(this.password)){
-			    		return VALIDATE.VALID;
-			    	}else {
-			    		return VALIDATE.INVALID;
-			    	}
-			    }else{
-			    	return VALIDATE.NOTFOUND;
-			    }
-				
-	   
-			} catch (FileNotFoundException e) {
-
-			    System.out.println("FileNotFound");
-
-			} catch (IOException e) {
-
-			    System.out.println("IOEXCeption");
-
-			} finally {
-
-			    if (fis != null) {
-			        try {
-			            fis.close();
-			        }
-			        catch (Exception e) {
-
-			            e.printStackTrace();
-			        }
-			    }
-			}
-			return VALIDATE.NOTFOUND;
+	 public VALIDATE validateUser(Properties p){
+		 
+	    String password = p.getProperty(this.username);  
+	    
+	    if (password != null){
+	    	if ( password.equals(this.password)){
+	    		return VALIDATE.VALID;
+	    	}else {
+	    		return VALIDATE.INVALID;
+	    	}
+	    }else{
+	    	return VALIDATE.NOTFOUND;
+	    }
+		
 	 }
 
 	public String getUsername() {

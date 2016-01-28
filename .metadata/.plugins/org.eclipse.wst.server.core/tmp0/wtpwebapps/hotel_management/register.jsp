@@ -4,13 +4,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Register</title>
 </head>
 <body>
 <h1> Register here</h1>
-<form name="input" action="Register" method="get">
+<%if (request.getAttribute("nameTaken") != null){ %>
+<h2><%= request.getAttribute("nameTaken") %></h2>
+<%} else if (request.getAttribute("passError") != null) {%>
+<h2><%= request.getAttribute("passError") %></h2>
+<%}else { %>
+<h2>If you do not have an account, please click the "Register" button below to create an account.</h2>
+<%} %>
+<form name="input" action="Register" method="post">
 User name: <input type="text" name="username">
+<br></br>
 Password: <input type="password" name="password">
+<br></br>
+Confirm Password: <input type="password" name="confirm">
+<br></br>
 <input type="submit" value="Submit">
 </form> 
 </body>

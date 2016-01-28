@@ -7,14 +7,20 @@
 <title>Login</title>
 </head>
 <body>
-Please login with your username and password. If you do not have an account, please click the "Register" button below to create an account.
 <h1> Login here</h1>
-<form name="input" action="Login" method="get">
+<%if (request.getAttribute("errorMessage") != null){ %>
+<h2><%= request.getAttribute("errorMessage") %></h2>
+<%}else { %>
+<h2>If you do not have an account, please click the "Register" button below to create an account.</h2>
+<%} %>
+<form name="input" action="Login" method="post">
 User name: <input type="text" name="username">
+<br></br>
 Password: <input type="password" name="password">
 <input type="submit" value="Submit">
 </form> 
 <form action="register.jsp">
+<br></br>
 	<input type="submit" value="Register">
 </form>
 </body>

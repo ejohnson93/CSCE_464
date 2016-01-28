@@ -39,3 +39,8 @@
 0:0:0:0:0:0:0:1 - - [27/Jan/2016:17:07:53 -0600] "GET /hotel_management/ HTTP/1.1" 200 610
 0:0:0:0:0:0:0:1 - - [27/Jan/2016:17:10:31 -0600] "GET /hotel_management/ HTTP/1.1" 200 690
 0:0:0:0:0:0:0:1 - - [27/Jan/2016:17:10:33 -0600] "GET /hotel_management/register.jsp HTTP/1.1" 200 487
+127.0.0.1 - - [27/Jan/2016:23:50:05 -0600] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [27/Jan/2016:23:50:06 -0600] "GET /hotel_management/ HTTP/1.1" 200 690
+0:0:0:0:0:0:0:1 - - [27/Jan/2016:23:50:51 -0600] "GET /hotel_management/Login?username=Bryan&password=456 HTTP/1.1" 500 690
+0:0:0:0:0:0:0:1 - - [27/Jan/2016:23:51:44 -0600] "GET /hotel_management/ HTTP/1.1" 200 691
+0:0:0:0:0:0:0:1 - - [27/Jan/2016:23:51:51 -0600] "POST /hotel_management/Login HTTP/1.1" 500 691
