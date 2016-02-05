@@ -1,6 +1,6 @@
-INDEX VERSION 1.122+C:\CSCE_464\HW_1\CSCE_464\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2715898704.index
-2227261842.index
-3122387723.index
-836488721.index
-3963332750.index
+INDEX VERSION 1.122+/home/ethan/workspace_464/CSCE_464/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3000200885.index
+3071135853.index
+1934662509.index
+3018835045.index
+241866309.index
