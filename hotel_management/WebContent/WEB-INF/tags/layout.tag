@@ -10,7 +10,7 @@
 
 </head>
 <ul class="header">
-Gen-Eric Hotels
+<h1>Hotel Manager</h1>
 </ul>
 
  <ul class="nav-bar">
@@ -22,6 +22,8 @@ Gen-Eric Hotels
 </ul>
 <br>
   <body>
-    <jsp:doBody/><br></br>
+  	<div class="body">
+    	<jsp:doBody/><br></br>
+    </div>
   </body>
 </html>

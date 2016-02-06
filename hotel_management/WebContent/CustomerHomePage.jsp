@@ -14,7 +14,7 @@
 				<div>Start</div>
 				
 				<div class='input-group date' id='startDate'>
-					<input name='startDate' type='text' class="form-control" name="startDate" />
+					<input name='startDate' type='text' class="form-control" />
 					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
 					</span>
 				</div>
@@ -25,7 +25,7 @@
 				<div>End</div>
 				
 				<div class='input-group date' id='endDate'>
-					<input name='endDate' type='text' class="form-control" name="org_endDate" />
+					<input name='endDate' type='text' class="form-control" />
 					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
 					</span>
 				</div>
@@ -34,22 +34,23 @@
 		<div class='col-md-5'>
 			<div>City</div>
 			<div class='form-group'>
-				<input name='city' type='text' value='Please Select a City' />
+				<input name='city' type='text' placeholder='Type a city' />
 			</div>
 		</div>
 		<div class='col-md-5'>
 			<div>Number of Rooms</div>
 			<div class='form-group'>
-				<input name="numRooms" type='text' value='Please Select Number of Rooms ' />
+				<input name="numRooms" type='text' placeholder='Number of Rooms' />
 			</div>
 		</div>
 		<div class='col-md-5'>
 			<div>Room Type</div>
 			<div class='form-group'>
-				<select name="roomType" value='Select Room Type' >
-					<option value="0">Standard</option>
-					<option value="1">Family</option>
-					<option value="2">Suite</option>
+				<select name="roomType" value='' >
+					<option id='default' value='0' selected=''>Select Room Type</option>
+					<option value="1">Standard</option>
+					<option value="2">Family</option>
+					<option value="3">Suite</option>
 				</select>
 			</div>
 		</div>
@@ -78,11 +79,13 @@
     $(function () {
     	$('#startDate').datetimepicker();
     	$('#endDate').datetimepicker();
-    	$("#startDate").on("dp.change",function (e) {
-            $('#endDate').data("DateTimePicker").setMinDate(e.date);
+    	$("#startDate").on("dp.change",function (select) {
+            $('#endDate').data("DateTimePicker").setMinDate(select.date);
+            $('.bootstrap-datetimepicker-widget').hide();
     	});
-    	$("#endDate").on("dp.change",function (e) {
-            $('#startDate').data("DateTimePicker").setMaxDate(e.date);
+    	$("#endDate").on("dp.change",function (select) {
+            $('#startDate').data("DateTimePicker").setMaxDate(select.date);
+            $('.bootstrap-datetimepicker-widget').hide();
     	});
     });
     </script>

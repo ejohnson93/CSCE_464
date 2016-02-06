@@ -10,4 +10,7 @@
 	<div>
 		Your payment of $202.46 will be refunded.
 	</div>
+	<form action="CustomerHomePage.jsp">
+		<input type="submit" class="btn" value="Return Home" />
+	</form>
 </t:layout>

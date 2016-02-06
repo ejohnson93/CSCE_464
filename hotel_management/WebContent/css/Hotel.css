@@ -56,11 +56,13 @@ li a:hover {
 	background-color: #3498db;
 	color: white;
 	font-size: 200%;
-	font-style: italic;
 	text-shadow: 2px 2px black;
-	padding: 2px 0px 2px 14px;
-	border-style: solid;
-	border: 0px 0px 2px 0px;
-	border-color: white; 
+	padding: 2px 2px 2px 14px; 
 	
 }
+
+.body {
+	
+	padding: 2px 20px 2px 20px;
+	
+	}

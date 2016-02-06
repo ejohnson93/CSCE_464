@@ -19,6 +19,6 @@
 		<input type="submit" class="btn" value="Confirm Cancellation"/>
 	</form>
 	<form action="CustomerHomePage.jsp">
-		<input type="submit" class="btn" value="Cancel" />
+		<input type="submit" class="btn btn-danger" value="Cancel" />
 	</form>
 </t:layout>

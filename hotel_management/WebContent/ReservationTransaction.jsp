@@ -6,16 +6,17 @@
 	<div>
 	Total Cost $202.46
 	</div>
+	<div class="form-group">
 	<form action="ReservationTransactionConfirmation.jsp" method="post">
-		<div class="col-md-4">
+		<div>
 			<div>Cardholder First Name</div>
 			<input name="firstName" type="text" />
 		</div>
-		<div class="col-md-4">
+		<div>
 			<div>Cardholder Last Name</div>
 			<input name="lastName" type="text" />
 		</div>
-		<div class="col-md-4">
+		<div>
 			<div>Card Type</div>
 			<select name="cardType" value="Card Type">
 				<option value="visa">Visa</option>
@@ -24,7 +25,7 @@
 				<option value="amExpress">American Express</option>
 			</select>
 		</div>
-		<div class="col-md-4">
+		<div>
 			<div>Card Number</div>
 			<input name="cardNumber" type="text" />
 		</div>
@@ -32,7 +33,7 @@
 			<div>Security Code</div>
 			<input name="securityCode" type="text" />
 		</div>
-		<div class="col-md-4">
+		<div>
 			<div>Expiration Month</div>
 			<select name="expMonth" value="Month" >
 				<option value="1">1</option>
@@ -49,7 +50,7 @@
 				<option value="12">12</option>
 			</select>
 		</div>
-		<div class="col-md-4">
+		<div>
 			<div>Expiration Year</div>
 			<select name="expYear" value="Year" >
 				<option value="2016">2016</option>
@@ -59,13 +60,20 @@
 				<option value="2020">2020</option>
 			</select>
 		</div>
-		<div class="col-md-4">
+		<div>
 			<div>Billing Address</div>
 			<input name="bilAddress" type="text" />
 		</div>
-		<input type="submit" class="btn" value="Confirm Reservation"/> 
+		<br/>
+		<div>
+			<input type="submit" class="btn" value="Confirm Reservation"/> 
+		</div>
 	</form>
-	<form action="ReservationSearchResults.jsp">
-		<input type="submit" class="btn" value="Cancel" />
-	</form>
+	</div>
+	<br />
+	<div>
+		<form action="ReservationSearchResults.jsp">
+			<input type="submit" class="btn btn-danger" value="Cancel" />
+		</form>
+	</div>
 </t:layout>
