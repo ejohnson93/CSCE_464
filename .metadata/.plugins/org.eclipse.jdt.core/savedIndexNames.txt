@@ -1,5 +1,4 @@
 INDEX VERSION 1.126+/home/ethan/workspace_464/CSCE_464/.metadata/.plugins/org.eclipse.jdt.core
-1792028142.index
 3018835045.index
 2705900049.index
 511895598.index
@@ -35,7 +34,6 @@ INDEX VERSION 1.126+/home/ethan/workspace_464/CSCE_464/.metadata/.plugins/org.ec
 3542660237.index
 1505361866.index
 392775124.index
-369383056.index
 3711166706.index
 2620393229.index
 3866688080.index
