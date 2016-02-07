@@ -3,6 +3,7 @@ package servlets;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Properties;
 
 import javax.servlet.ServletContext;
@@ -30,11 +31,13 @@ public class Register extends HttpServlet {
     Properties prop = new Properties();
 
 	String propFilePath;
+	
+	ServletContext sc;
     
     public void init () throws ServletException {
 		FileInputStream fis = null;
 		
-		ServletContext sc = this.getServletContext();
+		sc = this.getServletContext();
 		/* Store the user.properties file in the WEB-INF directory.
 		   Relative path is converted into the absolute path. */
 		propFilePath = sc.getRealPath("/WEB-INF/users.properties");
@@ -81,25 +84,38 @@ public class Register extends HttpServlet {
 		// TODO Auto-generated method stub
 		String name = request.getParameter("username");
 		String pass = request.getParameter("password");
-		String confirm = request.getParameter("confirm");
+		String mismatch = request.getParameter("matching");
 		
 		User user = new User(name, pass);
 		
-		if ( !(pass.equals(confirm)) ){
-			request.setAttribute("passError", "Passwords did not match, please try again!"); 
+		PrintWriter out = new PrintWriter("C:/Users/Bryan/Documents/servletError.txt");
+		out.println("Name is " + name);
+		out.println("Pass is " + pass);
+		out.println("Mismatch is " + mismatch);
+		out.close();
+		
+		if (name.isEmpty() || name == null || pass == null || pass.isEmpty() || mismatch == null || mismatch.isEmpty()) {
+			request.setAttribute("emptyString", "*Please enter a value for all fields!"); 
             request.getRequestDispatcher("register.jsp").forward( request, response);
             return;
-		}
-		
-		boolean success = user.addUser(prop, propFilePath);
-		
-		if (success) {
-			response.sendRedirect("login.jsp");
 		} else {
-			request.setAttribute("nameTaken", "Username was already taken, please try another one!"); 
-            request.getRequestDispatcher("register.jsp").forward( request, response);
-            return;
-			//response.sendRedirect("register.jsp");
+            if ( mismatch.equals("notMatching") ){
+				request.setAttribute("passError", "*Passwords did not match, please try again!"); 
+	            request.getRequestDispatcher("register.jsp").forward( request, response);
+	            return;
+			}
+			else if (mismatch.equals("matching")){
+				boolean success = user.addUser(prop, propFilePath);
+				
+				if (success) {
+					response.sendRedirect("login.jsp");
+				} else {
+					request.setAttribute("nameTaken", "*Username was already taken, please try another one!"); 
+		            request.getRequestDispatcher("register.jsp").forward( request, response);
+		            return;
+					//response.sendRedirect("register.jsp");
+				}
+			}
 		}
 	}
 
