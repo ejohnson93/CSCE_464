@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.126+/home/ethan/workspace_464/CSCE_464/.metadata/.plugins/org.eclipse.jdt.core
 3018835045.index
 2705900049.index
@@ -50,3 +51,43 @@ INDEX VERSION 1.126+/home/ethan/workspace_464/CSCE_464/.metadata/.plugins/org.ec
 3713225276.index
 2259717368.index
 83059658.index
+=======
+INDEX VERSION 1.127+C:\Users\Bryan\Documents\CSCE464\CSCE_464\.metadata\.plugins\org.eclipse.jdt.core
+1995173708.index
+4041092966.index
+1115467115.index
+349210780.index
+3133528496.index
+3426854537.index
+305854171.index
+1756078719.index
+3868045300.index
+2428856479.index
+3934938346.index
+2184358998.index
+163172794.index
+4155206848.index
+3628032987.index
+2712667730.index
+3921250888.index
+350660232.index
+4108727661.index
+1498219845.index
+3909221169.index
+1459875069.index
+4075666304.index
+573543369.index
+1299022128.index
+3974580528.index
+3301401386.index
+440687948.index
+2227261842.index
+1669920085.index
+30765161.index
+1697886153.index
+1254518885.index
+752055719.index
+2708159384.index
+3065916431.index
+502802899.index
+>>>>>>> 4892e302d6a2ba2168e435f2bf100503d3fed20b

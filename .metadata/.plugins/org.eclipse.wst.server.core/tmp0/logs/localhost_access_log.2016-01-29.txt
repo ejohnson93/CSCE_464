@@ -1,0 +1,17 @@
+0:0:0:0:0:0:0:1 - - [29/Jan/2016:10:20:51 -0600] "GET /hotel_management/ HTTP/1.1" 200 680
+127.0.0.1 - - [29/Jan/2016:10:23:19 -0600] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [29/Jan/2016:10:23:20 -0600] "GET /hotel_management/ HTTP/1.1" 200 680
+0:0:0:0:0:0:0:1 - - [29/Jan/2016:10:23:22 -0600] "GET /hotel_management/register.jsp HTTP/1.1" 200 1472
+0:0:0:0:0:0:0:1 - - [29/Jan/2016:10:23:32 -0600] "POST /hotel_management/Register HTTP/1.1" 500 1585
+0:0:0:0:0:0:0:1 - - [29/Jan/2016:10:23:32 -0600] "POST /hotel_management/Register HTTP/1.1" 200 1555
+0:0:0:0:0:0:0:1 - - [29/Jan/2016:10:29:02 -0600] "GET /hotel_management/ HTTP/1.1" 200 680
+0:0:0:0:0:0:0:1 - - [29/Jan/2016:10:29:03 -0600] "GET /hotel_management/register.jsp HTTP/1.1" 200 1534
+0:0:0:0:0:0:0:1 - - [29/Jan/2016:10:29:12 -0600] "GET /Register?mismatch=Passwords%20did%20not%20match,%20please%20try%20again! HTTP/1.1" 404 967
+0:0:0:0:0:0:0:1 - - [29/Jan/2016:10:29:12 -0600] "POST /hotel_management/Register HTTP/1.1" 200 1617
+127.0.0.1 - - [29/Jan/2016:10:51:01 -0600] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [29/Jan/2016:10:51:02 -0600] "GET /hotel_management/ HTTP/1.1" 200 680
+0:0:0:0:0:0:0:1 - - [29/Jan/2016:10:51:14 -0600] "GET /hotel_management/register.jsp HTTP/1.1" 200 1711
+0:0:0:0:0:0:0:1 - - [29/Jan/2016:10:51:26 -0600] "POST /hotel_management/Register HTTP/1.1" 200 1794
+0:0:0:0:0:0:0:1 - - [29/Jan/2016:10:52:03 -0600] "GET /hotel_management/ HTTP/1.1" 200 680
+0:0:0:0:0:0:0:1 - - [29/Jan/2016:10:52:04 -0600] "GET /hotel_management/register.jsp HTTP/1.1" 200 1711
+0:0:0:0:0:0:0:1 - - [29/Jan/2016:10:52:14 -0600] "POST /hotel_management/Register HTTP/1.1" 200 1794
